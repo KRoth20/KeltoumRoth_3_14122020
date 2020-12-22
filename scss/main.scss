@@ -1,48 +1,71 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/buttons";
+
+@import "./layout/header";
+@import "./layout/footer";
 
 
-
+@import "./page/accueil";
+@import "./page/enchantee";
+@import "./page/francaise";
+@import "./page/sens";
+@import "./page/palette";
 
 /*# sourceMappingURL=style.css.map */
 @media screen and (max-width: 375px)
 {
-    
-    
+    header{
+        margin: 20px 20px 5px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header img{
+        width: 6em;
+    }
     .map{
         padding: 10px 0 20px 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #EAEAEA;
+        width: 100%;
+        @include row;
+        background-color: $color-bg;
+        &__el{
+            width: 50%;
+            @include row;
+            justify-content: space-between;
+        }
     }
     .map img{
         margin: 0;
         width: 0.8em;
     }
-    .map p{
-        margin: 0 0 0 0.5em;
-        }
+    .map h2{
+        font-size: 1em;
+    }
+    
     .selection{
         margin: 20px;
         height: 230px;
-        display: flex;
-        flex-direction:column ;
-        vertical-align: super;
+        @include col;
         text-align: center;
     }
-    h2{
-        font-size: 1.8em;
-    }
+   
     .btn_choix{
         padding: 15px;border-radius: 40px;
-        background-color:#9356DC;
+        background-color:mix($color-primary, $color-secondary);
         box-shadow: 0px 10px 30px -10px grey;
-        color: #FFFF;
+        color:$color-inv;
         font-weight: 300;
     }
     .entreprise{
         width: 90%;
-        display: flex;flex-direction:row;
-        flex-wrap: wrap;
+        @include row;
         justify-content: flex-start;
         height: 300px;
     }
@@ -51,7 +74,7 @@
         left: 18px;
         color: #FFFF;
         font-size: 0.7em;
-        background-color: #9356DC;
+        background-color: $color-primary;
         border-radius: 100%;
         padding:7px 10px 7px 10px;
     }
@@ -61,16 +84,30 @@
     }
     .btn_miam{
         width: 80%;
-        display: flex;
-        flex-direction: row;
+        @include row;
         justify-content: flex-start;
         vertical-align: middle;
         padding: 20px;
         border-radius: 20px;
-        background-color:#F6F6F6;
+        background-color:$color-bg;
         box-shadow: 0px 10px 30px -10px grey;
         font-weight: 300;
     }
+   
+    .btn_miam a{
+        @include row;
+        justify-content: space-between;
+        text-decoration: none;
+        color:black;
+        & :hover{
+            background-color: $color-primary 10%;
+            }
+        
+    }
+    .btn_miam img{
+        padding-right: 20px;
+    }
+    
     .cartes{
         margin: 20px 0 20px 0;
         padding:20px 0 20px 0;
@@ -131,25 +168,24 @@
         display: flex;
         flex: row;
         flex-wrap: wrap;
-        /* justify-content: flex-start; */
     }
     .cowork p{
         margin: 0;
-        font-size: 0.8em;
+        font-size: $li_font;
         padding-left: 5px;
 
     }
     .legal{
-        font-size: 0.8em;
+        font-size: $li_font;
     }
     .cowork img{
         width: 0.5em;
         padding: 0;
         margin: 0;
     }
-    a{
+    footer a{
         text-decoration: none;
         color: #FFFF;
-        font-size: 0.8em;
+        font-size: $li_font;
     }
 }

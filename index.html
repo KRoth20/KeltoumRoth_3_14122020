@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
-    <link href = "https://fonts.googleapis.com/css2? family = Open + Sans & display = swap" rel = "feuille de style">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel ="feuille de style">
+    <link rel ="stylesheet" href="css/style.css">
     <title>OhmyFood</title>
 </head>
 
@@ -16,11 +16,13 @@
 
     <main>
     <!-- maquette loading spinner--> 
-        <div class="loading"></div>
+        <div class="load__bar"></div>
     <!-- première partie : qui, où, quoi-->
         <section class="map">
-             <img src="images/map-marker-alt-solid.svg" alt="localisation">
-            <p>Paris, Belleville</p>
+            <div class="map__el">
+                <img src="images/map-marker-alt-solid.svg" alt="localisation">
+                <h2>Paris, Belleville</h2>
+            </div>
         </section>
         <section class="selection">
             <h2>Réservez le menu qui vous convient</h2>
@@ -32,18 +34,19 @@
             <h2>Fonctionnement</h2>
             <div class="btn_miam">
                 <div class="point">1</div>
-                <img src="images/mobile-grey.svg" alt="mobile">
-                <h3>Choisissez un restaurant</h3>
+                <a href=""><img src="images/mobile-grey.svg" alt="mobile">
+                <h3>Choisissez un restaurant</h3></a>
+                
             </div>
             <div class="btn_miam">
                 <div class="point">2</div>
-                <img src="images/list-grey.svg" alt="list">
-                <h3>Composez votre menu</h3>
+                <a href=""><img src="images/list-grey.svg" alt="list">
+                <h3>Composez votre menu</h3></a>
             </div>
             <div class="btn_miam">
                 <div class="point">3</div>
-                <img src="images/store-grey.svg" alt="shop">
-                <h3>Dégustez au restaurant</h3>
+                <a href=""><img src="images/store-grey.svg" alt="shop">
+                <h3>Dégustez au restaurant</h3></a>
             </div>
         </section>
 
@@ -69,19 +72,19 @@
                 <img src="images/heart-regular.svg" alt="like" class="like">
             </div>
             
-            <div class="choix">
-                <div class="pitch">
+            <div class="choix"> </div> 
+            <div class="pitch">
                     <!-- mettre en backgroung :<img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="cook"> -->
-                </div>
+                
                 <h3>A la française</h3>
                 <p>Cité Rouge</p>
                 <img src="images/heart-regular.svg" alt="like" class="like">
-            </div>    
+            </div>  
             
-            <div class="choix">
-                <div class="pitch">
+            <div class="choix"></div>
+            <div class="pitch">
                     <!-- mettre en backgroung :<img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="cook"> -->
-                </div>
+                
                 <h3>Le délice des sens</h3>
                 <p>Folie-Méricourt</p>
                 <img src="images/heart-regular.svg" alt="like" class="like">
@@ -99,7 +102,8 @@
             <img src="images/hands-helping-white.svg" alt="hands">
             <p>Devenir partenaire</p>
         </div>
-        <p>Mentions légales</p>
+        <div class="legal">
+        <p>Mentions légales</p></div>
         <a href="mailto:KeltoumRoth@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
     </footer>
 
