@@ -19,54 +19,67 @@
 @import "./page/palette";
 
 /*# sourceMappingURL=style.css.map */
+
+/* mobile first*/
 @media screen and (max-width: 375px)
 {
+
+    /* header*/
     header{
-        margin: 20px 20px 5px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 100%;
+        text-align: center;
     }
     header img{
-        width: 6em;
+        margin-top: 5%;
+        margin-bottom: 2%;
+        width: 50%;
     }
+    /* section localisation*/
     .map{
-        padding: 10px 0 20px 0;
-        width: 100%;
+        padding: 0.5%;
         @include row;
-        background-color: $color-bg;
+        background-color: $color-bg-fonce;
         &__el{
             width: 50%;
             @include row;
-            justify-content: space-between;
         }
     }
     .map img{
-        margin: 0;
-        width: 0.8em;
+        width: 7%;
     }
     .map h2{
+        margin: 10%;
         font-size: 1em;
+        font-weight: 400;
     }
-    
+
+    /* section selection*/   
     .selection{
-        margin: 20px;
-        height: 230px;
+        padding: 5% 10% 10% 10%;
+        height: 210px;
         @include col;
         text-align: center;
+        background-color: $color-bg;
     }
-   
+    .selection p{
+        font-weight: 100;
+    }
     .btn_choix{
-        padding: 15px;border-radius: 40px;
-        background-color:mix($color-primary, $color-secondary);
-        box-shadow: 0px 10px 30px -10px grey;
-        color:$color-inv;
-        font-weight: 300;
+        width: 60%;
+        margin-top: 10%;
+        @include btn_action;
+        border-radius: 30px;
+        background-color:$color-bg-mix;
+        &:hover{
+            background-color: lighten($color: $color-bg-mix, $amount: 10%);
+            box-shadow: $box-shadow_bold;
+           
+        }
     }
-    .entreprise{
-        width: 90%;
-        @include row;
-        justify-content: flex-start;
+    /* section concept*/ 
+    .concept{
+        margin: 5%;
+        @include col;
         height: 300px;
     }
     .point{
@@ -78,7 +91,7 @@
         border-radius: 100%;
         padding:7px 10px 7px 10px;
     }
-    .entreprise h2{
+    .concept h2{
         width: 100%;
         text-align: left;
     }
@@ -87,101 +100,292 @@
         @include row;
         justify-content: flex-start;
         vertical-align: middle;
-        padding: 20px;
-        border-radius: 20px;
         background-color:$color-bg;
-        box-shadow: 0px 10px 30px -10px grey;
-        font-weight: 300;
+        @include btn_action;
+        color: black;
+        &:hover{
+            background-color: lighten($color: #af5fbb1d, $amount: 0);
+            box-shadow: $box-shadow_bold;
+        }
     }
    
-    .btn_miam a{
-        @include row;
-        justify-content: space-between;
-        text-decoration: none;
-        color:black;
-        & :hover{
-            background-color: $color-primary 10%;
-            }
-        
-    }
     .btn_miam img{
         padding-right: 20px;
     }
-    
-    .cartes{
-        margin: 20px 0 20px 0;
-        padding:20px 0 20px 0;
-        display: flex;
-        flex-direction: column;
-        background-color: #F6F6F6;
-        height: 600px;
+    /* section partenaires*/    
+    .partenaires{
+        @include col;
+        background-color:$color-bg;
+        height: 1500px;
     }
-    .cartes h2{
-        width: 80%;
+    .partenaires h2{
+        width: 90%;
         text-align: left;
     }
     .choix{
-        width: 80%;
-        height: 150px;
-        background-image:url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png);
-        background-size: cover;   
-        border-radius: 20px 20px 0 0;   
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    .new{
-        position: absolute;
-        right:18px;
-        color:#20c39b;
-        font-size: 1em;
-        font-weight: 400;
-        background-color:#99E2D0;
-        padding:10px;
+    .choix img{
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
+        border-radius: 20px 20px 0 0;
     }
     .pitch{
-        width: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        background-color: #FFFF;
-        border-radius: 0 0 20px 20px;
-        padding: 0 10% 0 10%;
+        @include row;
+        justify-content: space-between;
+        width: 94%;
+        line-height:20px;
+        padding: 10px 10px 20px 10px;
+        background-color:$color-inv;
+        border-radius:0 0 25px 25px;
+        &__el{
+            @include col;
+        }
+    }
+    .pitch img{
+        width: $size;
+    }
 
+    #heart {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(../images/heart-regular.png) center no-repeat;
+        transition: .8s ease-in-out;
+            &:hover{
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(../images/heart_pink.png)center no-repeat;
+        }
     }
-    .new{
-        position: absolute;
-        right:18px;
-        color:#20c39b;
-        font-size: 1em;
-        font-weight: 400;
-        background-color:#99E2D0;
-        padding:10px;
+
+    .new_1{
+        @include mob;
+        top: 950px;
     }
+    .new_2{
+        @include mob;
+        top: 1300px;
+    }
+    /* footer*/ 
     footer{
         background-color: #353535;
         color: #FFFF;
         padding: 20px;
     }
     footer img{
-        width: 8em;
-        padding: 20px 0 20px 0;
+        width: 6em;
+        padding: 10px 0 10px 0;
     }
     .cowork{
-        display: flex;
-        flex: row;
-        flex-wrap: wrap;
+        @include row;
+        justify-content: start;
     }
     .cowork p{
         margin: 0;
         font-size: $li_font;
-        padding-left: 5px;
-
     }
     .legal{
         font-size: $li_font;
     }
     .cowork img{
-        width: 0.5em;
-        padding: 0;
+        width: 0.8em;
+        padding: 0 10px 0 0;
+    }
+    footer a{
+        text-decoration: none;
+        color: #FFFF;
+        font-size: $li_font;
+    }
+
+}
+/*tablette*/
+@media screen and (min-width: 376px) and (max-width: 1024px)
+{
+    header{
+        width: 100%;
+        text-align: center;
+    }
+    header img{
+        margin-top: 5%;
+        margin-bottom: 2%;
+        width: 50%;
+    }
+    .map{
+        @include row;
+        justify-content: center;
+        background-color: $color-bg-fonce;
+        &__el{
+            width: 50%;
+            @include row;
+            justify-content: center;
+        }
+    }
+    .map img{
+        width: 7%;
+    }
+    .map h2{
+        margin: 10%;
+        font-size: 2em;
+        font-weight: 400;
+    }
+/* section selection*/   
+    .selection{
+        padding: 5% 10% 5% 10%;
+        height: 180px;
+        @include col;
+        justify-content: space-between;
+        text-align: center;
+        background-color: $color-bg;
+    }
+    .selection h2{
+        width: 100%;
+       
+    }
+    .selection p{
+        width: 40%;
+        font-weight: 100;
+    }
+   
+    .btn_choix{
+        width: 40%;
+        @include btn_action;
+        border-radius: 30px;
+        background-color:$color-bg-mix;
+        &:hover{
+            background-color: lighten($color: $color-bg-mix, $amount: 10%);
+            box-shadow: $box-shadow_bold;
+        }
+    }
+    /* section concept*/ 
+    .concept{
+        @include row;
+        justify-content: space-evenly;
+        height: 250px;
+    }
+    .point{
+        position: relative;
+        color: #FFFF;
+        font-size: 0.7em;
+        background-color: $color-primary;
+        border-radius: 100%;
+        padding:7px 10px 7px 10px;
+    }
+    .concept h2{
+        width: 100%;
+        text-align: center;
+    }
+    .btn_miam{
+        width: 25%;
+        padding: 0px;
+        @include row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        vertical-align: middle;
+        background-color:$color-bg;
+        @include btn_action;
+        color: black;
+        &:hover{
+            background-color: lighten($color: #af5fbb1d, $amount: 0);
+            box-shadow: $box-shadow_bold;
+        }
+    }
+    
+    .btn_miam img{
+        padding-right: 5px;
+        width: 0.9em;
+    }
+    /* section partenaires*/    
+    .partenaires{
+        @include row;
+        background-color:$color-bg;
+        height: auto;
+    }
+    .partenaires h2{
+        width: 100%;
+        text-align: center;
+        margin: 20px;
+    }
+    .choix{
+        margin: 20px;
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .choix img{
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
+        border-radius: 20px 20px 0 0;
+    }
+    .pitch{
+        @include row;
+        justify-content: space-between;
+        line-height:40px;
+        font-size: 1.5em;
+        padding: 20px;
+        background-color:$color-inv;
+        border-radius:0 0 25px 25px;
+        &__el{
+            @include col;
+        }
+    }
+    #heart {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(../images/heart-regular.png) center no-repeat;
+        background-size: contain;
+        transition: .8s ease-in-out;
+            &:hover{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(../images/heart_pink.png)center no-repeat;
+        background-size: contain;
+        }
+    }
+    .new_1{
+        @include tab;
+        top: 940px;
+    }
+    .new_2{
+        @include tab;
+        top: 1590px;
+    }
+     /* footer*/ 
+     footer{
+        background-color: #353535;
+        color: #FFFF;
+        padding: 20px;
+        @include row;
+    }
+    footer img{
+        width: 15em;
+     
+    }
+    .cowork{
+        @include row;
+        justify-content: start;
+    }
+    .cowork p{
         margin: 0;
+        font-size: $li_font;
+    }
+    .legal{
+        font-size: $li_font;
+    }
+    .cowork img{
+        width: 0.8em;
+        padding: 0 10px 0 0;
     }
     footer a{
         text-decoration: none;

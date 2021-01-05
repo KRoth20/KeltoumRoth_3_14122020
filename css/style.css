@@ -1,4 +1,4 @@
-@keyframes bar {
+@keyframes progress-bar {
   0% {
     transform: scale x(0);
   }
@@ -17,19 +17,35 @@
     transform: scale x(1);
   }
 }
-.load__bar__bar {
+#progress {
+  display: inline;
+  width: 90%;
+  margin: auto;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.load_bar {
+  width: auto;
+  height: 20px;
+  padding: 3px 3px 2px 3px;
+  border: 2px solid grey;
+  border-radius: 15px;
   background-color: #99E2D0;
-  transform-origin: left;
-  transform: scale(0.5);
-  animation: bar 1000ms 150ms;
+  opacity: 0.5;
+}
+.load_bar :hover {
+  animation-name: progress-bar;
+  animation: 150ms backwards ease-in-out;
 }
 
 * {
-  margin: auto;
+  margin: 0;
 }
 
 body img {
   width: 3vh;
+  height: 1.5em;
   margin: 0;
   padding: 0;
 }
@@ -51,24 +67,28 @@ p {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* mobile first*/
 @media screen and (max-width: 375px) {
+  /* header*/
   header {
-    margin: 20px 20px 5px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
 
   header img {
-    width: 6em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 50%;
   }
 
+  /* section localisation*/
   .map {
-    padding: 10px 0 20px 0;
-    width: 100%;
+    padding: 0.5%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #EAEAEA;
   }
   .map__el {
@@ -76,42 +96,62 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .map img {
-    margin: 0;
-    width: 0.8em;
+    width: 7%;
   }
 
   .map h2 {
+    margin: 10%;
     font-size: 1em;
+    font-weight: 400;
   }
 
+  /* section selection*/
   .selection {
-    margin: 20px;
-    height: 230px;
+    padding: 5% 10% 10% 10%;
+    height: 210px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
+    background-color: #F6F6F6;
+  }
+
+  .selection p {
+    font-weight: 100;
   }
 
   .btn_choix {
-    padding: 15px;
-    border-radius: 40px;
-    background-color: #c968db;
+    width: 60%;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0px 10px 30px -10px grey;
+    opacity: 1;
     color: #FFFF;
     font-weight: 300;
+    border-radius: 30px;
+    background-color: #d96ddb;
+  }
+  .btn_choix:hover {
+    background-color: #e496e5;
+    box-shadow: 0px 10px 30px -10px black;
   }
 
-  .entreprise {
-    width: 90%;
+  /* section concept*/
+  .concept {
+    margin: 5%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
     height: 300px;
   }
 
@@ -125,7 +165,7 @@ p {
     padding: 7px 10px 7px 10px;
   }
 
-  .entreprise h2 {
+  .concept h2 {
     width: 100%;
     text-align: left;
   }
@@ -135,83 +175,125 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     justify-content: flex-start;
     vertical-align: middle;
+    background-color: #F6F6F6;
     padding: 20px;
     border-radius: 20px;
-    background-color: #EAEAEA;
     box-shadow: 0px 10px 30px -10px grey;
+    opacity: 1;
+    color: #FFFF;
     font-weight: 300;
-  }
-
-  .btn_miam a {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-decoration: none;
     color: black;
   }
-  .btn_miam a :hover {
-    background-color: #9356DC 10%;
+  .btn_miam:hover {
+    background-color: rgba(175, 95, 187, 0.1137254902);
+    box-shadow: 0px 10px 30px -10px black;
   }
 
   .btn_miam img {
     padding-right: 20px;
   }
 
-  .cartes {
-    margin: 20px 0 20px 0;
-    padding: 20px 0 20px 0;
+  /* section partenaires*/
+  .partenaires {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #F6F6F6;
-    height: 600px;
+    height: 1500px;
   }
 
-  .cartes h2 {
-    width: 80%;
+  .partenaires h2 {
+    width: 90%;
     text-align: left;
   }
 
   .choix {
-    width: 80%;
-    height: 150px;
-    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png);
-    background-size: cover;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .choix img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 20px 20px 0 0;
   }
 
-  .new {
-    position: absolute;
-    right: 18px;
-    color: #20c39b;
-    font-size: 1em;
-    font-weight: 400;
-    background-color: #99E2D0;
-    padding: 10px;
-  }
-
   .pitch {
-    width: 60%;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    line-height: 20px;
+    padding: 10px 10px 20px 10px;
     background-color: #FFFF;
-    border-radius: 0 0 20px 20px;
-    padding: 0 10% 0 10%;
+    border-radius: 0 0 25px 25px;
+  }
+  .pitch__el {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
-  .new {
+  .pitch img {
+    width: 3vh;
+  }
+
+  #heart {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/heart-regular.png) center no-repeat;
+    transition: 0.8s ease-in-out;
+  }
+  #heart:hover {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/heart_pink.png) center no-repeat;
+  }
+
+  .new_1 {
     position: absolute;
-    right: 18px;
-    color: #20c39b;
-    font-size: 1em;
-    font-weight: 400;
+    color: #05916e;
+    text-align: center;
     background-color: #99E2D0;
-    padding: 10px;
+    padding: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center;
+    right: 50px;
+    top: 950px;
   }
 
+  .new_2 {
+    position: absolute;
+    color: #05916e;
+    text-align: center;
+    background-color: #99E2D0;
+    padding: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center;
+    right: 50px;
+    top: 1300px;
+  }
+
+  /* footer*/
   footer {
     background-color: #353535;
     color: #FFFF;
@@ -219,20 +301,22 @@ p {
   }
 
   footer img {
-    width: 8em;
-    padding: 20px 0 20px 0;
+    width: 6em;
+    padding: 10px 0 10px 0;
   }
 
   .cowork {
     display: flex;
-    flex: row;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: start;
   }
 
   .cowork p {
     margin: 0;
     font-size: 0.8em;
-    padding-left: 5px;
   }
 
   .legal {
@@ -240,9 +324,285 @@ p {
   }
 
   .cowork img {
-    width: 0.5em;
-    padding: 0;
+    width: 0.8em;
+    padding: 0 10px 0 0;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #FFFF;
+    font-size: 0.8em;
+  }
+}
+/*tablette*/
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+  header {
+    width: 100%;
+    text-align: center;
+  }
+
+  header img {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 50%;
+  }
+
+  .map {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAEAEA;
+  }
+  .map__el {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map img {
+    width: 7%;
+  }
+
+  .map h2 {
+    margin: 10%;
+    font-size: 2em;
+    font-weight: 400;
+  }
+
+  /* section selection*/
+  .selection {
+    padding: 5% 10% 5% 10%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #F6F6F6;
+  }
+
+  .selection h2 {
+    width: 100%;
+  }
+
+  .selection p {
+    width: 40%;
+    font-weight: 100;
+  }
+
+  .btn_choix {
+    width: 40%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px -10px grey;
+    opacity: 1;
+    color: #FFFF;
+    font-weight: 300;
+    border-radius: 30px;
+    background-color: #d96ddb;
+  }
+  .btn_choix:hover {
+    background-color: #e496e5;
+    box-shadow: 0px 10px 30px -10px black;
+  }
+
+  /* section concept*/
+  .concept {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 250px;
+  }
+
+  .point {
+    position: relative;
+    color: #FFFF;
+    font-size: 0.7em;
+    background-color: #9356DC;
+    border-radius: 100%;
+    padding: 7px 10px 7px 10px;
+  }
+
+  .concept h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn_miam {
+    width: 25%;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    vertical-align: middle;
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px -10px grey;
+    opacity: 1;
+    color: #FFFF;
+    font-weight: 300;
+    color: black;
+  }
+  .btn_miam:hover {
+    background-color: rgba(175, 95, 187, 0.1137254902);
+    box-shadow: 0px 10px 30px -10px black;
+  }
+
+  .btn_miam img {
+    padding-right: 5px;
+    width: 0.9em;
+  }
+
+  /* section partenaires*/
+  .partenaires {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F6F6F6;
+    height: auto;
+  }
+
+  .partenaires h2 {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .choix {
+    margin: 20px;
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .choix img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .pitch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 40px;
+    font-size: 1.5em;
+    padding: 20px;
+    background-color: #FFFF;
+    border-radius: 0 0 25px 25px;
+  }
+  .pitch__el {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #heart {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../images/heart-regular.png) center no-repeat;
+    background-size: contain;
+    transition: 0.8s ease-in-out;
+  }
+  #heart:hover {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../images/heart_pink.png) center no-repeat;
+    background-size: contain;
+  }
+
+  .new_1 {
+    position: absolute;
+    color: #05916e;
+    text-align: center;
+    background-color: #99E2D0;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    right: 200px;
+    top: 940px;
+  }
+
+  .new_2 {
+    position: absolute;
+    color: #05916e;
+    text-align: center;
+    background-color: #99E2D0;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    right: 200px;
+    top: 1590px;
+  }
+
+  /* footer*/
+  footer {
+    background-color: #353535;
+    color: #FFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  footer img {
+    width: 15em;
+  }
+
+  .cowork {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .cowork p {
     margin: 0;
+    font-size: 0.8em;
+  }
+
+  .legal {
+    font-size: 0.8em;
+  }
+
+  .cowork img {
+    width: 0.8em;
+    padding: 0 10px 0 0;
   }
 
   footer a {

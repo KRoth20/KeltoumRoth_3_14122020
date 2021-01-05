@@ -16,7 +16,11 @@
 
     <main>
     <!-- maquette loading spinner--> 
-        <div class="load__bar"></div>
+        <!-- <div class="load__bar"></div> -->
+        <div id="progress">
+            <p>J'en ai l'eau à la bouche...</p>
+            <div class="load_bar"></div>
+        </div>
     <!-- première partie : qui, où, quoi-->
         <section class="map">
             <div class="map__el">
@@ -30,64 +34,69 @@
             <h3 class="btn_choix"> Explorez nos restaurants</h3>
         </section>
        
-        <section class="entreprise">
+        <section class="concept">
             <h2>Fonctionnement</h2>
             <div class="btn_miam">
                 <div class="point">1</div>
-                <a href=""><img src="images/mobile-grey.svg" alt="mobile">
-                <h3>Choisissez un restaurant</h3></a>
-                
+                <img src="images/mobile-grey.svg" alt="mobile">
+                <h3>Choisissez un restaurant</h3>
             </div>
             <div class="btn_miam">
                 <div class="point">2</div>
-                <a href=""><img src="images/list-grey.svg" alt="list">
-                <h3>Composez votre menu</h3></a>
+                <img src="images/list-grey.svg" alt="list">
+                <h3>Composez votre menu</h3>
             </div>
             <div class="btn_miam">
                 <div class="point">3</div>
-                <a href=""><img src="images/store-grey.svg" alt="shop">
-                <h3>Dégustez au restaurant</h3></a>
+                <img src="images/store-grey.svg" alt="shop">
+                <h3>Dégustez au restaurant</h3>
             </div>
         </section>
 
     <!-- 2e partie : propositions--> 
-        <article class="cartes">
+        <article class="partenaires">
             <h2>Restaurants</h2>
             <div class="choix">
-                <div class="new">Nouveau</div>
+                <div class="new_1">Nouveau</div>
+                <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="restau">
+                    <div class="pitch">
+                        <div class="pitch_el">
+                            <h3>La palette du goût</h3>
+                            <p>Ménilmontant</p>
+                        </div>
+                        <div id ="heart"></div>
+                    </div>
             </div>
-            <div class="pitch">
-                <h3>La palette du goût</h3>
-                <p>Ménilmontant</p>
-                <img src="images/heart-regular.svg" alt="like" class="like">
-            </div>
-            
             <div class="choix">
-                <!-- mettre en backgroung :<img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="cook"> -->
-                <div class="new">Nouveau</div>
+                <div class="new_2">Nouveau</div>
+                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="restau">
+                <div class="pitch">
+                    <div class="pitch_el">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                    </div>
+                    <div id="heart"></div>
+                </div>
             </div>
-            <div class="pitch">
-                <h3>La note enchantée</h3>
-                <p>Charonne</p>
-                <img src="images/heart-regular.svg" alt="like" class="like">
-            </div>
-            
-            <div class="choix"> </div> 
-            <div class="pitch">
-                    <!-- mettre en backgroung :<img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="cook"> -->
-                
-                <h3>A la française</h3>
-                <p>Cité Rouge</p>
-                <img src="images/heart-regular.svg" alt="like" class="like">
+            <div class="choix"> 
+                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="restau">
+                <div class="pitch">
+                    <div class="pitch_el">
+                        <h3>A la française</h3>
+                        <p>Cité Rouge</p> 
+                    </div>
+                    <div id="heart"></div>
+                </div>
             </div>  
-            
-            <div class="choix"></div>
-            <div class="pitch">
-                    <!-- mettre en backgroung :<img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="cook"> -->
-                
-                <h3>Le délice des sens</h3>
-                <p>Folie-Méricourt</p>
-                <img src="images/heart-regular.svg" alt="like" class="like">
+            <div class="choix">
+                <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="restau">
+                <div class="pitch">
+                    <div class="pitch_el">
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                    </div>
+                    <div id="heart"></div>
+                </div>
             </div>
         </article>
     </main>

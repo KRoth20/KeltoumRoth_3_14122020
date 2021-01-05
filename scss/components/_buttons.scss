@@ -1,0 +1,8 @@
+@mixin btn_action {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    opacity: 1;
+    color:$color-inv;
+    font-weight: 300;  
+}
