@@ -18,7 +18,7 @@
   }
 }
 #progress {
-  display: inline;
+  display: block;
   width: 90%;
   margin: auto;
   font-weight: lighter;
@@ -28,15 +28,14 @@
 .load_bar {
   width: auto;
   height: 20px;
-  padding: 3px 3px 2px 3px;
   border: 2px solid grey;
   border-radius: 15px;
   background-color: #99E2D0;
-  opacity: 0.5;
 }
-.load_bar :hover {
-  animation-name: progress-bar;
-  animation: 150ms backwards ease-in-out;
+.load_bar:hover {
+  animation: progress-bar 1000ms;
+  background-color: #99E2D0;
+  opacity: 0.5;
 }
 
 * {
