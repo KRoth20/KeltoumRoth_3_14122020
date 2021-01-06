@@ -10,18 +10,21 @@
 </head>
 
 <body>
-
+    
     <Header><h1><img src="images/logo/ohmyfood@2x.svg" alt="logo"></h1>
     </Header>
 
     <main>
     <!-- maquette loading spinner--> 
-        <!-- <div class="load__bar"></div> -->
-        <div id="progress">
-            <p>J'en ai l'eau à la bouche...</p>
-            <div class="load_bar"></div>
-        </div>
-    <!-- première partie : qui, où, quoi-->
+       
+        <!-- <section class="wait">
+            <span class="loader loader-quart"></span>l'eau à la bouche...</section> -->
+            <section class="wait">
+                <span class="loader loader-bars"><span></span></span>l'eau à la bouche...</section>
+                <script>
+                    jQuery(window).load(function(){ jQuery(".wait").fadeOut("200"); });
+                </script>
+            <!-- première partie : qui, où, quoi-->
         <section class="map">
             <div class="map__el">
                 <img src="images/map-marker-alt-solid.svg" alt="localisation">
@@ -36,29 +39,32 @@
        
         <section class="concept">
             <h2>Fonctionnement</h2>
-            <div class="btn_miam">
-                <div class="point">1</div>
-                <img src="images/mobile-grey.svg" alt="mobile">
-                <h3>Choisissez un restaurant</h3>
-            </div>
-            <div class="btn_miam">
-                <div class="point">2</div>
-                <img src="images/list-grey.svg" alt="list">
-                <h3>Composez votre menu</h3>
-            </div>
-            <div class="btn_miam">
-                <div class="point">3</div>
-                <img src="images/store-grey.svg" alt="shop">
-                <h3>Dégustez au restaurant</h3>
+            <div class="restau">
+                <div class="btn_miam">
+                    <div class="point">1</div>
+                    <img src="images/mobile-grey.svg" alt="mobile">
+                    <h3>Choisissez un restaurant</h3>
+                </div>
+                <div class="btn_miam">
+                    <div class="point">2</div>
+                    <img src="images/list-grey.svg" alt="list">
+                    <h3>Composez votre menu</h3>
+                </div>
+                <div class="btn_miam">
+                    <div class="point">3</div>
+                    <img src="images/store-grey.svg" alt="shop">
+                    <h3>Dégustez au restaurant</h3>
+                </div>
             </div>
         </section>
 
     <!-- 2e partie : propositions--> 
         <article class="partenaires">
             <h2>Restaurants</h2>
-            <div class="choix">
-                <div class="new_1">Nouveau</div>
+            <a href="index_palette_du_gout.html"><div class="choix">
+               <div class="new_1">Nouveau</div>
                 <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="restau">
+            </a>
                     <div class="pitch">
                         <div class="pitch_el">
                             <h3>La palette du goût</h3>
@@ -68,8 +74,8 @@
                     </div>
             </div>
             <div class="choix">
-                <div class="new_2">Nouveau</div>
-                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="restau">
+                <a href="index_note_enchantee.html"><div class="new_2">Nouveau</div>
+                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="restau"></a>
                 <div class="pitch">
                     <div class="pitch_el">
                         <h3>La note enchantée</h3>
@@ -79,7 +85,7 @@
                 </div>
             </div>
             <div class="choix"> 
-                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="restau">
+                <a href="index_a_la_francaise.html"><img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="restau"></a>
                 <div class="pitch">
                     <div class="pitch_el">
                         <h3>A la française</h3>
@@ -89,7 +95,7 @@
                 </div>
             </div>  
             <div class="choix">
-                <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="restau">
+                <a href="index_delice_des_sens.html"><img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="restau"></a>
                 <div class="pitch">
                     <div class="pitch_el">
                         <h3>Le délice des sens</h3>
@@ -115,6 +121,9 @@
         <p>Mentions légales</p></div>
         <a href="mailto:KeltoumRoth@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
     </footer>
-
+    
+    <!-- <script src="functions.js"></script> -->
+    
 </body>
+
 </html>
