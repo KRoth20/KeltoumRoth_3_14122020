@@ -1,39 +1,8 @@
-$prog-bar-dur :1000ms;
-$prog-bar-delay :150ms;
-$col-bar: $color-tertiary;
-$size: 3vh;
 
-@keyframes progress-bar{
-    0% {transform: scale x(0);}
-    17% { transform: scale x(.18);}
-    24% { transform: scale x(.40);
-        animation-timing-function:
-        cubic-bezier(.9,0,.1,1);}
-    46% { transform : scale x(.81);
-        animation-timing-function:
-        cubic-bezier(.25,0.25,1);}
-    100% {transform: scale x(1);}
-}
 
-#progress{
-    display: block;
-    width: 90%;
-    margin: auto;
-    font-weight: lighter;
-    text-align: center;
-    
+ @keyframes grow{
+    0%{ transform: scaleY(0);opacity: 0;}
+    50%{ transform: scaleY(1);opacity: 1;}
+    100%{transform: scaleY(0);opacity: 0;}
 }
-.load_bar{
-    width: auto;
-    height: 20px;
-    border: 2px solid grey;
-    border-radius: 15px;
-    background-color: $col-bar; 
-    &:hover {
-        animation: progress-bar 1000ms;
-        background-color: $col-bar; 
-        opacity: 0.5;
-        // animation: progress-bar $prog-bar-delay $prog-bar-dur backwards ease-in-out;
-        }
    
-}

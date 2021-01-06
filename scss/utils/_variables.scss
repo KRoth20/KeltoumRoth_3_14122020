@@ -4,6 +4,7 @@ $color-tertiary:#99E2D0;
 $color-inv:#FFFF;
 $color-bg: #F6F6F6;
 $color-bg-fonce:#EAEAEA;
+$color-mix: linear-gradient($color-secondary, $color-primary);
 $color-bg-mix:mix($color-primary, $color-secondary, 35%);
 $size : 0.8em;
 $font : 1em;

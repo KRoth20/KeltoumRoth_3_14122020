@@ -21,8 +21,7 @@
 /*# sourceMappingURL=style.css.map */
 
 /* mobile first*/
-@media screen and (max-width: 375px)
-{
+
 
     /* header*/
     header{
@@ -53,6 +52,71 @@
         font-weight: 400;
     }
 
+    //loader en cercle//
+    .wait{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center; 
+        background-color: $color-tertiary;
+        width: 100%;
+        height: 100px;
+        color: $color-inv;
+        font-size: 1.5em;
+        font-weight: lighter;
+        
+    }
+    // .loader{
+    //     width: 40px;
+    //     height: 40px;
+    //     margin: 10px;
+    //     display: inline-block;
+    //     vertical-align: middle;
+    //     position: relative;
+    // }
+    // .loader-quart{
+    //     border-radius: 50px;
+    //     border:6px solid rgba(255,255,255,0.4);
+    // }
+    // .loader-quart:after{
+    //     content: "";
+    //     position: absolute;
+    //     top: -6px; 
+    //     left: -6px;
+    //     bottom: -6px;
+    //     right: -6px;
+    //     border-radius: 50px;
+    //     border: 6px solid transparent;
+    //     border-top-color: $color-inv;
+    //     animation: spin 1s linear infinite;
+    // }
+
+    // @keyframes spin{
+    //     0%{ transform:rotate(0deg);}
+    //     100%{transform: rotate(360deg);}
+
+    // }
+
+    //loader en barres//
+    .loader{
+        display: inline-block;
+        position: relative;
+    }
+    .loader-bars:before{
+        @include load;
+        left: 5px;
+    }
+    .loader-bars:after{
+        @include load;
+        left: 15px;
+        animation: grow 1.5s linear -0.5s infinite;
+    }
+    .loader-bars span{
+        @include load;
+        left: 25px;
+        animation: grow 1.5s linear -1s infinite;
+    }
+
     /* section selection*/   
     .selection{
         padding: 5% 10% 10% 10%;
@@ -69,22 +133,22 @@
         margin-top: 10%;
         @include btn_action;
         border-radius: 30px;
-        background-color:$color-bg-mix;
+        background: linear-gradient($color-secondary, $color-primary);
         &:hover{
-            background-color: lighten($color: $color-bg-mix, $amount: 10%);
+            background: lighten($color: $color-bg-mix, $amount: 10%);
             box-shadow: $box-shadow_bold;
-           
         }
     }
     /* section concept*/ 
-    .concept{
+    .restau{
         margin: 5%;
         @include col;
+        align-items: center;
         height: 300px;
     }
     .point{
-        position: absolute;
-        left: 18px;
+        position: relative;
+        left: -30px;
         color: #FFFF;
         font-size: 0.7em;
         background-color: $color-primary;
@@ -94,13 +158,13 @@
     .concept h2{
         width: 100%;
         text-align: left;
+        margin: 5%;
     }
     .btn_miam{
         width: 80%;
         @include row;
         justify-content: flex-start;
         vertical-align: middle;
-        background-color:$color-bg;
         @include btn_action;
         color: black;
         &:hover{
@@ -111,35 +175,39 @@
    
     .btn_miam img{
         padding-right: 20px;
+        &:hover{
+            background-image: url(../images/);
+        }
     }
     /* section partenaires*/    
     .partenaires{
         @include col;
         background-color:$color-bg;
-        height: 1500px;
     }
     .partenaires h2{
         width: 90%;
         text-align: left;
+        margin: 40px 0 40px 0;
     }
     .choix{
         width: 90%;
         height: auto;
+        margin-bottom: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     .choix img{
         width: 100%;
-        height: auto;
-        object-fit: contain; 
+        height: 140px;
+        object-fit: cover; 
         border-radius: 20px 20px 0 0;
     }
     .pitch{
         @include row;
         justify-content: space-between;
-        width: 94%;
         line-height:20px;
+        margin-top: -3px;
         padding: 10px 10px 20px 10px;
         background-color:$color-inv;
         border-radius:0 0 25px 25px;
@@ -204,192 +272,42 @@
         font-size: $li_font;
     }
 
-}
+
+
 /*tablette*/
-@media screen and (min-width: 376px) and (max-width: 1024px)
+@media (min-width:800px)  and (max-width:1500px)
 {
-    header{
-        width: 100%;
-        text-align: center;
-    }
-    header img{
-        margin-top: 5%;
-        margin-bottom: 2%;
-        width: 50%;
-    }
-    .map{
+
+    .restau{
         @include row;
-        justify-content: center;
-        background-color: $color-bg-fonce;
-        &__el{
-            width: 50%;
-            @include row;
-            justify-content: center;
-        }
-    }
-    .map img{
-        width: 7%;
-    }
-    .map h2{
-        margin: 10%;
-        font-size: 2em;
-        font-weight: 400;
-    }
-/* section selection*/   
-    .selection{
-        padding: 5% 10% 5% 10%;
-        height: 180px;
-        @include col;
-        justify-content: space-between;
-        text-align: center;
-        background-color: $color-bg;
-    }
-    .selection h2{
-        width: 100%;
-       
-    }
-    .selection p{
-        width: 40%;
-        font-weight: 100;
-    }
-   
-    .btn_choix{
-        width: 40%;
-        @include btn_action;
-        border-radius: 30px;
-        background-color:$color-bg-mix;
-        &:hover{
-            background-color: lighten($color: $color-bg-mix, $amount: 10%);
-            box-shadow: $box-shadow_bold;
-        }
-    }
-    /* section concept*/ 
-    .concept{
-        @include row;
-        justify-content: space-evenly;
-        height: 250px;
-    }
-    .point{
-        position: relative;
-        color: #FFFF;
-        font-size: 0.7em;
-        background-color: $color-primary;
-        border-radius: 100%;
-        padding:7px 10px 7px 10px;
+        flex-wrap: nowrap;
+        height: auto;
     }
     .concept h2{
         width: 100%;
         text-align: center;
+        margin: 20px; 
     }
     .btn_miam{
-        width: 25%;
-        padding: 0px;
-        @include row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        vertical-align: middle;
-        background-color:$color-bg;
-        @include btn_action;
-        color: black;
-        &:hover{
-            background-color: lighten($color: #af5fbb1d, $amount: 0);
-            box-shadow: $box-shadow_bold;
-        }
+        margin-left: 20px;
     }
-    
-    .btn_miam img{
-        padding-right: 5px;
-        width: 0.9em;
-    }
-    /* section partenaires*/    
+
     .partenaires{
         @include row;
-        background-color:$color-bg;
-        height: auto;
+
     }
+
     .partenaires h2{
         width: 100%;
         text-align: center;
-        margin: 20px;
     }
     .choix{
-        margin: 20px;
-        width: 70%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 250px;
+
     }
-    .choix img{
-        width: 100%;
-        height: auto;
-        object-fit: contain; 
-        border-radius: 20px 20px 0 0;
-    }
-    .pitch{
+    footer{
         @include row;
-        justify-content: space-between;
-        line-height:40px;
-        font-size: 1.5em;
-        padding: 20px;
-        background-color:$color-inv;
-        border-radius:0 0 25px 25px;
-        &__el{
-            @include col;
-        }
+        flex-wrap: nowrap;
     }
-    #heart {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background: url(../images/heart-regular.png) center no-repeat;
-        background-size: contain;
-        transition: .8s ease-in-out;
-            &:hover{
-        display: block;
-        width: 40px;
-        height: 40px;
-        background: url(../images/heart_pink.png)center no-repeat;
-        background-size: contain;
-        }
-    }
-    .new_1{
-        @include tab;
-        top: 940px;
-    }
-    .new_2{
-        @include tab;
-        top: 1590px;
-    }
-     /* footer*/ 
-     footer{
-        background-color: #353535;
-        color: #FFFF;
-        padding: 20px;
-        @include row;
-    }
-    footer img{
-        width: 15em;
-     
-    }
-    .cowork{
-        @include row;
-        justify-content: start;
-    }
-    .cowork p{
-        margin: 0;
-        font-size: $li_font;
-    }
-    .legal{
-        font-size: $li_font;
-    }
-    .cowork img{
-        width: 0.8em;
-        padding: 0 10px 0 0;
-    }
-    footer a{
-        text-decoration: none;
-        color: #FFFF;
-        font-size: $li_font;
-    }
+
 }
