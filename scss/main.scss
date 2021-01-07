@@ -35,28 +35,35 @@
     }
     /* section localisation*/
     .map{
-        padding: 0.5%;
+        height: 50px;
         @include row;
         background-color: $color-bg-fonce;
         &__el{
-            width: 50%;
+            width: 200px;
             @include row;
+            justify-content: space-evenly;
+            & img{
+            width: 7%;
+            }
+            & input{
+                background-color: $color-bg-fonce;
+                border: none;
+                font-size: 1em;
+                font-weight: 500;
+            }
         }
-    }
-    .map img{
-        width: 7%;
-    }
-    .map h2{
-        margin: 10%;
-        font-size: 1em;
-        font-weight: 400;
-    }
+    }   
+    // .map h2{
+    //     margin: 10%;
+    //     font-size: 1em;
+    //     font-weight: 400;
+    // }
 
-    //loader en cercle//
+    //loader en barres//
     .wait{
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center; 
         background-color: $color-tertiary;
         width: 100%;
@@ -66,54 +73,22 @@
         font-weight: lighter;
         
     }
-    // .loader{
-    //     width: 40px;
-    //     height: 40px;
-    //     margin: 10px;
-    //     display: inline-block;
-    //     vertical-align: middle;
-    //     position: relative;
-    // }
-    // .loader-quart{
-    //     border-radius: 50px;
-    //     border:6px solid rgba(255,255,255,0.4);
-    // }
-    // .loader-quart:after{
-    //     content: "";
-    //     position: absolute;
-    //     top: -6px; 
-    //     left: -6px;
-    //     bottom: -6px;
-    //     right: -6px;
-    //     border-radius: 50px;
-    //     border: 6px solid transparent;
-    //     border-top-color: $color-inv;
-    //     animation: spin 1s linear infinite;
-    // }
-
-    // @keyframes spin{
-    //     0%{ transform:rotate(0deg);}
-    //     100%{transform: rotate(360deg);}
-
-    // }
-
-    //loader en barres//
     .loader{
         display: inline-block;
         position: relative;
     }
     .loader-bars:before{
         @include load;
-        left: 5px;
+        left: -40px;
     }
     .loader-bars:after{
         @include load;
-        left: 15px;
+        left: -30px;
         animation: grow 1.5s linear -0.5s infinite;
     }
     .loader-bars span{
         @include load;
-        left: 25px;
+        left: -20px;
         animation: grow 1.5s linear -1s infinite;
     }
 
@@ -122,20 +97,22 @@
         padding: 5% 10% 10% 10%;
         height: 210px;
         @include col;
+        flex-wrap: nowrap;
         text-align: center;
         background-color: $color-bg;
-    }
-    .selection p{
+        & p{
         font-weight: 100;
+        margin-top: 20px;
+        }
     }
     .btn_choix{
         width: 60%;
-        margin-top: 10%;
+        margin-top: 20px;
         @include btn_action;
         border-radius: 30px;
         background: linear-gradient($color-secondary, $color-primary);
         &:hover{
-            background: lighten($color: $color-bg-mix, $amount: 10%);
+            background: $color-mix-light;
             box-shadow: $box-shadow_bold;
         }
     }
@@ -196,6 +173,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
     }
     .choix img{
         width: 100%;
@@ -203,6 +181,7 @@
         object-fit: cover; 
         border-radius: 20px 20px 0 0;
     }
+    
     .pitch{
         @include row;
         justify-content: space-between;
@@ -212,36 +191,36 @@
         background-color:$color-inv;
         border-radius:0 0 25px 25px;
         &__el{
-            @include col;
+        @include col;
         }
-    }
-    .pitch img{
-        width: $size;
-    }
-
-    #heart {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(../images/heart-regular.png) center no-repeat;
-        transition: .8s ease-in-out;
-            &:hover{
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(../images/heart_pink.png)center no-repeat;
+        & .empty{
+            position: relative;
+            font-size: 1.3rem;
+            cursor: pointer;
+            &:hover > .full{
+                transform: scale(1);
+            }
+            & .full{
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: scale(0);
+                transition: transform 2s 50ms ease-in-out;
+                // &::before{
+                //     background-image: linear-gradient($color-secondary, $color-primary);
+                // }
+            }
         }
-    }
 
-    .new_1{
-        @include mob;
-        top: 950px;
     }
-    .new_2{
+    .new{
+        position: relative;
         @include mob;
-        top: 1300px;
+        top: 10px;
+        right:10px;
+        font-size: 0.8em;
+        padding: 10px 20px 10px 20px;
     }
-    /* footer*/ 
     footer{
         background-color: #353535;
         color: #FFFF;
@@ -309,5 +288,5 @@
         @include row;
         flex-wrap: nowrap;
     }
-
+    
 }
