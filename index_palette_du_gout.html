@@ -6,132 +6,158 @@
     <link rel = "preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2 family=Roboto:wght@300&display=swap" rel ="feuille de style">
     <link rel ="preconnect" href="https://fonts.gstatic.com">
-    <link href ="https://fonts.googleapis.com/css2? family=Shrikhand & display=swap" rel="feuille de style">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2? family = Shrikhand & display = swap" rel = "feuille de style ">
+    <script src="https://kit.fontawesome.com/27ec1bf8c6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <title>OhmyFood</title>
 </head>
 
 <body>
 
-    <Header>
-        <a href="index.html"><img src="images/arrow-left-solid.svg" alt=""></a>
+    <Header class="header_bis">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
         <h1><img src="images/logo/ohmyfood@2x.svg" alt="logo"></h1>
     </Header>
 
     <main>
-        <section class="vitrine">
-            <!-- mettre en backgroung :<img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="cook"> -->
-        </section>
-
-    <!-- carte des menus-->
+        <!-- carte des menus-->
+        <div class="vitrine"></div>
         <article class="carte">
-            <div>
+            <div class="titre">
                 <h2>La palette du goût</h2>
-                <img src="images/heart-regular.svg" alt="like">
+                <i class="far fa-heart empty" aria-hidden="true" >
+                    <i class="fas fa-heart full" aria-hidden="true"></i>
+                </i>
             </div>
-            <h3>ENTREES</h3>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Fricassée d'escargot</h4>
-                    <div class="content">
-                        <p>Au piment d'Espelette</p>
-                        <p>25€</p>
+            <div class="horizontal">
+                <div class="cat cat--1">
+                    <h3>ENTREES</h3>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Fricassée d'escargot</h4>
+                            <div class="content">
+                                <p>Au piment d'Espelette</p>
+                                <span>25€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Foie gras de canard mi-cuit</h4>
+                            <div class="content">
+                                <p>Et ses copeaux de truffe noire</p>
+                                <span>35€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Oeuf au plat</h4>
+                            <div class="content">
+                                <p>Assaisonné à la truffe sur lit de caviar</p>
+                                <span>20€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat cat--2">
+                    <h3>PLATS</h3>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Filet de boeuf aux herbes</h4>
+                            <div class="content">
+                                <p>Accompagné de sa ribambelle de légumes</p>
+                                <span>40€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Parmentier de queue de boeuf</h4>
+                            <div class="content">
+                                <p>À la truffe noire sur sa purée de panais</p>
+                                <span>35€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Filet de turbot</h4>
+                            <div class="content">
+                                <p>Aux agrumes</p>
+                                <span>44€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat cat--3">
+                    <h3>DESSERTS</h3>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Paris-Brest</h4>
+                            <div class="content">
+                                <p>Revisité</p>
+                                <span>18€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Macaron au chocolat d'exception</h4>
+                            <div class="content">
+                                <p>Et glace à la vanille de Madagascar</p>
+                                <span>22€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_miam2">
+                        <div class="name">
+                            <h4>Mousse au chocolat </h4>
+                            <div class="content">
+                                <p>Au piment d'Espelette et à la truffe noire</p>
+                                <span>23€</span>
+                                <div class="check"><i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Foie gras de canard mi-cuit</h4>
-                    <div class="content">
-                        <p>Et ses copeaux de truffe noire</p>
-                        <p>35€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Oeuf au plat</h4>
-                    <div class="content">
-                        <p>Assaisonné à la truffe sur lit de caviar</p>
-                        <p>20€</p>
-                    </div>
-                </div>
-            </div>
-            <h3>PLATS</h3>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Filet de boeuf aux herbes</h4>
-                    <div class="content">
-                        <p>Accompagné de sa ribambelle de légumes</p>
-                        <p>40€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Parmentier de queue de boeuf</h4>
-                    <div class="content">
-                        <p>À la truffe noire sur sa purée de panais</p>
-                        <p>35€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Filet de turbot</h4>
-                    <div class="content">
-                        <p>Aux agrumes</p>
-                        <p>44€</p>
-                    </div>
-                </div>
-            </div>
-            <h3>DESSERTS</h3>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Paris-Brest</h4>
-                    <div class="content">
-                        <p>Revisité</p>
-                        <p>18€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Macaron au chocolat d'exception</h4>
-                    <div class="content">
-                        <p>Et glace à la vanille de Madagascar</p>
-                        <p>22€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_miam">
-                <div class="name">
-                    <h4>Mousse au chocolat </h4>
-                    <div class="content">
-                        <p>Au piment d'Espelette et à la truffe noire</p>
-                        <p>23€</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <section class="order">Commander
-        </section>
+            <section class="order"><button>Commander</button>
+            </section>    
+        </article>     
     </main>
 
     <footer>
-        <img src="images/logo/ohmyfood@2x.svg" alt="logo">
-        <div class="fournisseur">
+        <img src="images/logo/ohmyfood@2x_white.svg" alt="logo">
+        <div class="cowork">
             <img src="images/utensils-white.svg" alt="couverts">
             <p>Proposer un restaurant</p>
         </div>
-        <div class="partenaire">
+        <div class="cowork">
             <img src="images/hands-helping-white.svg" alt="hands">
             <p>Devenir partenaire</p>
         </div>
-        <p>Mentions légales</p>
+        <div class="legal">
+        <p>Mentions légales</p></div>
         <a href="mailto:KeltoumRoth@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
     </footer>
-
 </body>
 </html>

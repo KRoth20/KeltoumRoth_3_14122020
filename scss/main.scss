@@ -22,17 +22,22 @@
 
 /* mobile first*/
 
-
-    /* header*/
+    /* headers*/
     header{
-        width: 100%;
-        text-align: center;
+        @include header;
     }
-    header img{
-        margin-top: 5%;
-        margin-bottom: 2%;
-        width: 50%;
+    .header_bis{
+        @include header;
+        & i{
+            position:absolute;
+            font-size: 2em;
+            color: black;
+            top: 28px;
+            left: 20px;
+        }
     }
+    
+    /* PAGE ACCUEIL*/
     /* section localisation*/
     .map{
         height: 50px;
@@ -53,6 +58,7 @@
             }
         }
     }   
+
     //loader en barres//
     .wait{
         position: fixed;
@@ -105,16 +111,9 @@
         }
     }
     .btn_choix{
-        width: 60%;
-        margin-top: 20px;
         @include btn_action;
-        border-radius: 30px;
-        background: linear-gradient($color-secondary, $color-primary);
-        &:hover{
-            background: $color-mix-light;
-            box-shadow: $box-shadow_bold;
-        }
     }
+
     /* section concept*/ 
     .restau{
         margin: 5%;
@@ -137,12 +136,7 @@
         margin: 5%;
     }
     .btn_miam{
-        width: 80%;
-        @include row;
-        justify-content: flex-start;
-        vertical-align: middle;
-        @include btn_action;
-        color: black;
+            @include btn_miam;
         & i{
             color: grey;
             padding-right: 20px;
@@ -181,37 +175,42 @@
         object-fit: cover; 
         border-radius: 20px 20px 0 0;
     }
-    
     .pitch{
         @include row;
         justify-content: space-between;
         line-height:20px;
-        margin-top: -3px;
         padding: 10px 10px 20px 10px;
         background-color:$color-inv;
         border-radius:0 0 25px 25px;
         &__el{
         @include col;
         }
-        & .empty{
-            position: relative;
-            font-size: 1.3rem;
-            cursor: pointer;
-            &:hover > .full{
-                transform: scale(1);
-            }
+    }
+    .empty{
+        position: relative;
+        font-size: 1.3rem;
+        cursor: pointer;
+        & .full{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background: linear-gradient(to bottom, $color-primary, $color-secondary); 
+            background: -webkit-linear-gradient(to bottom, $color-primary, $color-secondary);
+            background: -moz-linear-gradient(to bottom, $color-primary, $color-secondary); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:hover{
             & .full{
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: scale(0);
-                transition: transform 2s 50ms ease-in-out;
-                // &::before{
-                //     background-image: linear-gradient($color-secondary, $color-primary);
-                // }
+                animation: fondu_heart 1800ms;
+                animation-fill-mode: forwards;
+            }
+            & .empty{
+                opacity: 0;
+                transition: opacity 1800ms;
             }
         }
-
     }
     .new{
         position: relative;
@@ -221,6 +220,8 @@
         font-size: 0.8em;
         padding: 10px 20px 10px 20px;
     }
+
+    /* footer*/ 
     footer{
         background-color: #353535;
         color: #FFFF;
@@ -251,12 +252,126 @@
         font-size: $li_font;
     }
 
+     /* PAGE_LA PALETTE DU GOUT*/
+     /* Vitrine*/
+     .vitrine{
+        margin: 0;
+        width: 100%;
+        height: 300px;
+        background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png);
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+     }
+    .carte{
+        margin: auto;
+        width: 100%;
+        z-index: 1;
+        margin-top: -50px;
+        border-radius: 30px;
+        background-color: $color-bg;
+        & .titre{
+            width: 85%;
+            @include row;
+            justify-content: space-between;
+            font-family: 'Shrikhand', cursive;
+            padding: 20px;
+        }
+        & .cat{
+            width: 90%;
+            margin: auto;
+            & h3{
+                font-weight: 200;
+                color: grey;
+                border-bottom: solid $color-tertiary;
+                padding-bottom: 5px;
+                width: 40px;
+                margin: 20px 0 20px 0;
+            }
+            & .btn_miam2{
+                @include btn_miam;
+                width: 90%;
+                margin-bottom: 20px;
+                position: relative;
+                & .name{
+                    width: 100%;
+                    & h4{
+                        @include points;
+                    }
+                    &:hover .content{
+                        width: 83%;
+                    }  
+                    &:hover .content .check{ 
+                        transform: scaleX(1);
+                        opacity: 1;
+                    }   
+                    &:hover .content .fa-check-circle{ 
+                        transform: rotate(360deg);
+                        transition: transform 800ms;
+                    }
+                    & .content{
+                        @include row;
+                        flex-wrap: nowrap;
+                        width: 100%;
+                        justify-content: space-between;
+                        transition: width 800ms;
+                        & p{
+                            @include points;
+                        }
+                        & span{
+                            font-weight: bold;
+                        }
+                        & .check{
+                            background-color: $color-tertiary;
+                            width: 70px;
+                            height: 76px;
+                            border-radius: 0 30px 30px 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            opacity: 0;
+                            transform: scaleX(0);
+                            transition: transform 800ms;
+                            transform-origin: right 50%;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            & i{
+                                font-size: 2em;
+                                color:$color-inv;
+                                transform: rotate(0deg);
+                            }
+                        }
+                    }
+                }
+            }
+            &--1{
+                animation: fondu 3s 300ms;
+                animation-fill-mode: backwards;
+
+            }
+            &--2{
+                animation: fondu 4s 300ms;
+            }
+            &--3{
+                animation: fondu 5s 300ms;
+            }
+        }
+         & .order{
+            padding: 20px 0 50px 0;
+            display: flex;
+            justify-content: center;
+             & button{
+                @include btn_action;
+                border: none;
+            }
+        }
+    }
 
 
-/*tablette*/
+/*autres formats*/
 @media (min-width:800px)  and (max-width:1500px)
 {
-
     .restau{
         @include row;
         flex-wrap: nowrap;
@@ -273,20 +388,29 @@
 
     .partenaires{
         @include row;
-
     }
-
     .partenaires h2{
         width: 100%;
         text-align: center;
     }
     .choix{
         width: 250px;
-
+    }
+    .horizontal{
+        @include row;
+        flex-wrap: nowrap;
+        margin-left: 20px;
+        & .cat{
+            & h3{
+                text-align: center;
+            }
+            & .btn_miam2{
+                width: 80%;
+            }
+        }
     }
     footer{
         @include row;
         flex-wrap: nowrap;
     }
-    
 }

@@ -29,6 +29,24 @@
     z-index: 0;
   }
 }
+@keyframes fondu_heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fondu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 * {
   margin: 0;
 }
@@ -58,18 +76,35 @@ p {
 
 /*# sourceMappingURL=style.css.map */
 /* mobile first*/
-/* header*/
+/* headers*/
 header {
   width: 100%;
   text-align: center;
 }
-
 header img {
   margin-top: 5%;
   margin-bottom: 2%;
   width: 50%;
 }
 
+.header_bis {
+  width: 100%;
+  text-align: center;
+}
+.header_bis img {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 50%;
+}
+.header_bis i {
+  position: absolute;
+  font-size: 2em;
+  color: black;
+  top: 28px;
+  left: 20px;
+}
+
+/* PAGE ACCUEIL*/
 /* section localisation*/
 .map {
   height: 50px;
@@ -179,19 +214,19 @@ header img {
 }
 
 .btn_choix {
-  width: 60%;
-  margin-top: 20px;
   padding: 20px;
-  border-radius: 20px;
+  text-align: center;
   box-shadow: 0px 10px 30px -10px grey;
   opacity: 1;
   color: #FFFF;
   font-weight: 300;
+  width: 250px;
+  margin-top: 20px;
   border-radius: 30px;
   background: linear-gradient(#FF79DA, #9356DC);
 }
 .btn_choix:hover {
-  background: linear-gradient(#fface8, #ae80e5);
+  opacity: 0.8;
   box-shadow: 0px 10px 30px -10px black;
 }
 
@@ -224,20 +259,19 @@ header img {
 }
 
 .btn_miam {
-  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  width: 80%;
   justify-content: flex-start;
   vertical-align: middle;
   padding: 20px;
-  border-radius: 20px;
   box-shadow: 0px 10px 30px -10px grey;
   opacity: 1;
-  color: #FFFF;
   font-weight: 300;
+  border-radius: 30px;
   color: black;
 }
 .btn_miam i {
@@ -293,7 +327,6 @@ header img {
   align-items: center;
   justify-content: space-between;
   line-height: 20px;
-  margin-top: -3px;
   padding: 10px 10px 20px 10px;
   background-color: #FFFF;
   border-radius: 0 0 25px 25px;
@@ -305,20 +338,30 @@ header img {
   justify-content: space-evenly;
   align-items: center;
 }
-.pitch .empty {
+
+.empty {
   position: relative;
   font-size: 1.3rem;
   cursor: pointer;
 }
-.pitch .empty:hover > .full {
-  transform: scale(1);
-}
-.pitch .empty .full {
+.empty .full {
   position: absolute;
   top: 0;
   left: 0;
-  transform: scale(0);
-  transition: transform 2s 50ms ease-in-out;
+  opacity: 0;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  background: -webkit-linear-gradient(to bottom, #9356DC, #FF79DA);
+  background: -moz-linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.empty:hover .full {
+  animation: fondu_heart 1800ms;
+  animation-fill-mode: forwards;
+}
+.empty:hover .empty {
+  opacity: 0;
+  transition: opacity 1800ms;
 }
 
 .new {
@@ -338,6 +381,7 @@ header img {
   padding: 10px 20px 10px 20px;
 }
 
+/* footer*/
 footer {
   background-color: #353535;
   color: #FFFF;
@@ -378,7 +422,161 @@ footer a {
   font-size: 0.8em;
 }
 
-/*tablette*/
+/* PAGE_LA PALETTE DU GOUT*/
+/* Vitrine*/
+.vitrine {
+  margin: 0;
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.carte {
+  margin: auto;
+  width: 100%;
+  z-index: 1;
+  margin-top: -50px;
+  border-radius: 30px;
+  background-color: #F6F6F6;
+}
+.carte .titre {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Shrikhand", cursive;
+  padding: 20px;
+}
+.carte .cat {
+  width: 90%;
+  margin: auto;
+}
+.carte .cat h3 {
+  font-weight: 200;
+  color: grey;
+  border-bottom: solid #99E2D0;
+  padding-bottom: 5px;
+  width: 40px;
+  margin: 20px 0 20px 0;
+}
+.carte .cat .btn_miam2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  justify-content: flex-start;
+  vertical-align: middle;
+  padding: 20px;
+  box-shadow: 0px 10px 30px -10px grey;
+  opacity: 1;
+  font-weight: 300;
+  border-radius: 30px;
+  color: black;
+  width: 90%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.carte .cat .btn_miam2 .name {
+  width: 100%;
+}
+.carte .cat .btn_miam2 .name h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.carte .cat .btn_miam2 .name:hover .content {
+  width: 83%;
+}
+.carte .cat .btn_miam2 .name:hover .content .check {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.carte .cat .btn_miam2 .name:hover .content .fa-check-circle {
+  transform: rotate(360deg);
+  transition: transform 800ms;
+}
+.carte .cat .btn_miam2 .name .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+  transition: width 800ms;
+}
+.carte .cat .btn_miam2 .name .content p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.carte .cat .btn_miam2 .name .content span {
+  font-weight: bold;
+}
+.carte .cat .btn_miam2 .name .content .check {
+  background-color: #99E2D0;
+  width: 70px;
+  height: 76px;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 800ms;
+  transform-origin: right 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.carte .cat .btn_miam2 .name .content .check i {
+  font-size: 2em;
+  color: #FFFF;
+  transform: rotate(0deg);
+}
+.carte .cat--1 {
+  animation: fondu 3s 300ms;
+  animation-fill-mode: backwards;
+}
+.carte .cat--2 {
+  animation: fondu 4s 300ms;
+}
+.carte .cat--3 {
+  animation: fondu 5s 300ms;
+}
+.carte .order {
+  padding: 20px 0 50px 0;
+  display: flex;
+  justify-content: center;
+}
+.carte .order button {
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 10px 30px -10px grey;
+  opacity: 1;
+  color: #FFFF;
+  font-weight: 300;
+  width: 250px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+}
+.carte .order button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 10px 30px -10px black;
+}
+
+/*autres formats*/
 @media (min-width: 800px) and (max-width: 1500px) {
   .restau {
     display: flex;
@@ -415,6 +613,22 @@ footer a {
 
   .choix {
     width: 250px;
+  }
+
+  .horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: 20px;
+  }
+  .horizontal .cat h3 {
+    text-align: center;
+  }
+  .horizontal .cat .btn_miam2 {
+    width: 80%;
   }
 
   footer {

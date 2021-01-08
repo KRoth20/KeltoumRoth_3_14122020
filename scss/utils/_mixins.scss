@@ -1,3 +1,12 @@
+@mixin header{
+    width: 100%;
+        text-align: center;
+        & img{
+            margin-top: 5%;
+            margin-bottom: 2%;
+            width: 50%;
+        }
+}
 @mixin row {
     display: flex;
     flex-direction: row;
@@ -47,4 +56,8 @@
     animation: grow 1.5s linear infinite backwards alternate;
 }
 
-
+@mixin points {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
