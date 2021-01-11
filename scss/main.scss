@@ -108,7 +108,7 @@
     }
     .order{
         @include btn_action;
-    }
+        }
     
 
     /* section concept*/ 
@@ -254,12 +254,11 @@
             font-size: $li_font;
             }
             & i{
-                font-size: 0.5em;
+                font-size: $size;
                 padding-right: 10px;
             }
         }
         & .legal{
-        font-size: $color-inv;
         font-size:$li_font ;
         }
     }
