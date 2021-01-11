@@ -1,5 +1,5 @@
 body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 h2{
     font-size: $font *1.8;
@@ -8,6 +8,13 @@ h3{
     font-size: $font;
 }
 p{
-    font-size: $font;
-    
+    font-size: $font;  
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    line-height: 0;
+    font-weight: 300;
 }

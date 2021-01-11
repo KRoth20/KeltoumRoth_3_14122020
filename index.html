@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "preconnect" href = "https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel ="feuille de style">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/27ec1bf8c6.js" crossorigin="anonymous"></script>
     <link rel ="stylesheet" href="css/style.css">
     <title>OhmyFood</title>
@@ -12,25 +13,27 @@
 
 <body>
     
-    <Header><h1><img src="images/logo/ohmyfood@2x.svg" alt="logo"></h1>
+    <Header>
+    <h1><img src="images/logo/ohmyfood@2x.svg" alt="logo"></h1>
     </Header>
 
 
     <main>
     <!-- maquette loading spinner --> 
-            <section class="wait">
-                <span class="loader loader-bars"><span></span></span>l'eau à la bouche...</section>
+        <div class="wait">
+        <span class="loader loader-bars"><span></span></span>l'eau à la bouche...
+        </div>
             <!-- première partie : qui, où, quoi-->
-        <section class="map">
+        <div class="map">
             <div class="map__el">
                 <img src="images/map-marker-alt-solid.svg" alt="localisation">
                 <input type="text" id="lieu" name="lieu" placeholder="Paris, Belleville" required minlength="4" maxlength="12" size="15">
             </div>
-        </section>
+        </div>
         <section class="selection">
             <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <h3 class="btn_choix"> Explorez nos restaurants</h3>
+            <h3 ><button class="order">Explorez nos restaurants</button></h3>
         </section>
        
         <section class="concept">
@@ -59,8 +62,8 @@
             <h2>Restaurants</h2>
             <div class="choix">
                 <a href="index_palette_du_gout.html">
-                <div class="new">Nouveau</div>
-                <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="restau"></a>
+                    <div class="new">Nouveau</div>
+                    <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="restau">
                     <div class="pitch">
                         <div class="pitch_el">
                             <h3>La palette du goût</h3>
@@ -70,47 +73,53 @@
                             <i class="fas fa-heart full" aria-hidden="true"></i>
                         </i>
                     </div>
+                </a>
             </div>
             <div class="choix">
                 <a href="index_note_enchantee.html">
-                <div class="new">Nouveau</div>
-                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="restau"></a>
-                <div class="pitch">
-                    <div class="pitch_el">
-                        <h3>La note enchantée</h3>
-                        <p>Charonne</p>
+                    <div class="new">Nouveau</div>
+                    <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="restau">
+                    <div class="pitch">
+                        <div class="pitch_el">
+                            <h3>La note enchantée</h3>
+                            <p>Charonne</p>
+                        </div>
+                        <i class="far fa-heart empty" aria-hidden="true" >
+                            <i class="fas fa-heart full" aria-hidden="true"></i>
+                        </i>
                     </div>
-                    <i class="far fa-heart empty" aria-hidden="true" >
-                        <i class="fas fa-heart full" aria-hidden="true"></i>
-                    </i>
-                </div>
+                </a>
             </div>
             <div class="choix">
                 <a href="index_a_la_francaise.html">
-                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="restau"></a>
-                <div class="pitch">
-                    <div class="pitch_el">
-                        <h3>A la française</h3>
-                        <p>Cité Rouge</p> 
+                    <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="restau">
+                    <div class="pitch">
+                        <div class="pitch_el">
+                            <h3>À la française</h3>
+                            <p>Cité Rouge</p>
+                        </div>
+                        <i class="far fa-heart empty" aria-hidden="true" >
+                            <i class="fas fa-heart full" aria-hidden="true"></i>
+                        </i>
                     </div>
-                    <i class="far fa-heart empty" aria-hidden="true" >
-                        <i class="fas fa-heart full" aria-hidden="true"></i>
-                    </i>
-                </div>
-            </div>  
+                </a>
+            </div>
             <div class="choix">
                 <a href="index_delice_des_sens.html">
-                <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="restau" ></a>
-                <div class="pitch">
-                    <div class="pitch_el">
-                        <h3>Le délice des sens</h3>
-                        <p>Folie-Méricourt</p>
+                    <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="restau">
+                    <div class="pitch">
+                        <div class="pitch_el">
+                            <h3>Délice des sens</h3>
+                            <p>Folie-Méricourt</p>
+                        </div>
+                        <i class="far fa-heart empty" aria-hidden="true" >
+                            <i class="fas fa-heart full" aria-hidden="true"></i>
+                        </i>
                     </div>
-                    <i class="far fa-heart empty" aria-hidden="true" >
-                        <i class="fas fa-heart full" aria-hidden="true"></i>
-                    </i>
-                </div>
+                </a>
             </div>
+
+
         </article>
     </main>
 
