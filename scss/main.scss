@@ -47,9 +47,6 @@
             width: 200px;
             @include row;
             justify-content: space-evenly;
-            & img{
-            width: 7%;
-            }
             & input{
                 background-color: $color-bg-fonce;
                 border: none;
@@ -76,25 +73,24 @@
         z-index: -1;
         animation: appear 3s;
         animation-iteration-count: 1;
-    }
-    .loader{
+        & .loader{
         display: inline-block;
         position: relative;
-        
-    }
-    .loader-bars:before{
+        }
+        & .loader-bars:before{
         @include load;
         left: -40px;
-    }
-    .loader-bars:after{
+        }
+        .loader-bars:after{
         @include load;
         left: -30px;
         animation: grow 1.5s linear -0.5s infinite;
-    }
-    .loader-bars span{
+        }
+        .loader-bars span{
         @include load;
         left: -20px;
         animation: grow 1.5s linear -1s infinite;
+        }
     }
 
     /* section selection*/   
@@ -108,42 +104,42 @@
         & p{
         font-weight: 100;
         margin-top: 20px;
-        }
+        } 
     }
     .order{
         @include btn_action;
     }
+    
 
     /* section concept*/ 
+    .concept h2{
+        text-align: left;
+        margin: 5%;
+    }
     .restau{
         margin: 5%;
         @include col;
         align-items: center;
         height: 300px;
-    }
-    .point{
-        position: relative;
-        left: -30px;
-        color: #FFFF;
-        font-size: 0.7em;
-        background-color: $color-primary;
-        border-radius: 100%;
-        padding:7px 10px 7px 10px;
-    }
-    .concept h2{
-        text-align: left;
-        margin: 5%;
-    }
-    .btn_miam{
+        & .btn_miam{
             @include btn_miam;
             position: relative;
             cursor: pointer;
             z-index: 0;
-        & i{
+            & .point{
+                position: relative;
+                left: -30px;
+                color: #FFFF;
+                font-size: 0.7em;
+                background-color: $color-primary;
+                border-radius: 100%;
+                padding:7px 10px 7px 10px;
+            }
+            & i{
             color: grey;
             padding-right: 20px;
-        }
-        &::after{
+            }
+            &::after{
             position: absolute;
             content: "";
             top: 0;
@@ -156,26 +152,26 @@
             border-radius: 30px;
             z-index: -1;
             transition: opacity 250ms;
-        }
-        &:hover{
-            &::after{
-                opacity: 1;
             }
-            & i{
+            &:hover{
+                &::after{
+                opacity: 1;
+                }
+                & i{
                 color: $color-primary;
+                }
             }
         }
     }
-   
     /* section partenaires*/    
     .partenaires{
         @include col;
         background-color:$color-bg;
-    }
-    .partenaires h2{
+        & h2{
         width: 90%;
         text-align: left;
         margin: 40px 0 40px 0;
+        }
     }
     .choix{
         width: 90%;
@@ -184,12 +180,16 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-    }
-    .choix img{
+        & a{
+            color: black;
+            font-size: $font;
+        }
+        & img{
         width: 100%;
         height: 140px;
         object-fit: cover; 
         border-radius: 20px 20px 0 0;
+        }
     }
     .pitch{
         @include row;
@@ -241,30 +241,27 @@
         background-color: #353535;
         color: #FFFF;
         padding: 20px;
-    }
-    footer img{
-        width: 6em;
-        padding: 10px 0 10px 0;
-    }
-    .cowork{
+        line-height: 1.2em;
+        & img{
+            width: 6em;
+            padding: 10px 0 10px 0;
+        }
+        & .cowork{
         @include row;
         justify-content: start;
-    }
-    .cowork p{
-        margin: 0;
-        font-size: $li_font;
-    }
-    .legal{
-        font-size: $li_font;
-    }
-    .cowork img{
-        width: 0.8em;
-        padding: 0 10px 0 0;
-    }
-    footer a{
-        text-decoration: none;
-        color: #FFFF;
-        font-size: $li_font;
+            & p{
+            margin: 0;
+            font-size: $li_font;
+            }
+            & i{
+                font-size: 0.5em;
+                padding-right: 10px;
+            }
+        }
+        & .legal{
+        font-size: $color-inv;
+        font-size:$li_font ;
+        }
     }
 
      /* 4 PAGES_CARTES DES RESTAU*/

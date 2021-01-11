@@ -14,7 +14,8 @@ p{
 
 a {
     text-decoration: none;
-    color: black;
+    color: $color-inv;
     line-height: 0;
+    font-size:$li_font;
     font-weight: 300;
 }
