@@ -214,7 +214,7 @@
             opacity: 0;
             background: linear-gradient(to bottom, $color-primary, $color-secondary); 
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
         &:hover{
             & .full{
@@ -321,6 +321,7 @@
                 width: 90%;
                 margin-bottom: 20px;
                 position: relative;
+                overflow: hidden;
                 & .name{
                     width: 100%;
                     & h4{
@@ -333,8 +334,8 @@
                         }
                     }  
                     &:hover .content .check{ 
-                        transform: translateX(1%);
-                        opacity: 1;
+                        animation: check 800ms;
+                        animation-fill-mode: forwards;
                     }   
                     &:hover .content .fa-check-circle{ 
                         transform: rotate(360deg);
@@ -363,9 +364,6 @@
                             justify-content: center;
                             align-items: center;
                             opacity: 0;
-                            transform: translateX(0%);
-                            transition: transform 800ms;
-                            transform-origin: right 50%;
                             position: absolute;
                             right: 0;
                             top: 0;

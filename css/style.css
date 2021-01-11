@@ -47,6 +47,16 @@
     transform: translateY(0px);
   }
 }
+@keyframes check {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
 }
@@ -231,7 +241,7 @@ header img {
   color: #FFFF;
   font-weight: 300;
   font-size: 1em;
-  width: 220px;
+  width: 230px;
   margin-top: 20px;
   border-radius: 30px;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -381,7 +391,7 @@ header img {
   opacity: 0;
   background: linear-gradient(to bottom, #9356DC, #FF79DA);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .empty:hover .full {
   animation: fondu_heart 1800ms;
@@ -531,6 +541,7 @@ footer a {
   width: 90%;
   margin-bottom: 20px;
   position: relative;
+  overflow: hidden;
 }
 @media (min-width: 310px) and (max-width: 374px) {
   .carte .cat .btn_miam2 {
@@ -554,8 +565,8 @@ footer a {
   }
 }
 .carte .cat .btn_miam2 .name:hover .content .check {
-  transform: translateX(1%);
-  opacity: 1;
+  animation: check 800ms;
+  animation-fill-mode: forwards;
 }
 .carte .cat .btn_miam2 .name:hover .content .fa-check-circle {
   transform: rotate(360deg);
@@ -591,9 +602,6 @@ footer a {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transform: translateX(0%);
-  transition: transform 800ms;
-  transform-origin: right 50%;
   position: absolute;
   right: 0;
   top: 0;
