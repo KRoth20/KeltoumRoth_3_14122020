@@ -1,7 +1,6 @@
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
-@import "./utils/extensions";
 
 @import "./base/base";
 @import "./base/typography";
@@ -12,11 +11,7 @@
 @import "./layout/footer";
 
 
-@import "./page/accueil";
-@import "./page/enchantee";
-@import "./page/francaise";
-@import "./page/sens";
-@import "./page/palette";
+
 
 /*# sourceMappingURL=style.css.map */
 
@@ -29,11 +24,16 @@
     .header_bis{
         @include header;
         & i{
-            position:absolute;
             font-size: 2em;
-            color: black;
-            top: 28px;
+            position: absolute;
+            top: 10px;
             left: 20px;
+            color: black;
+        }
+        @media (min-width:310px) and (max-width:374px){
+            & img{
+                width: 6em;
+            }
         }
     }
     
@@ -131,19 +131,36 @@
         padding:7px 10px 7px 10px;
     }
     .concept h2{
-        width: 100%;
         text-align: left;
         margin: 5%;
     }
     .btn_miam{
             @include btn_miam;
+            position: relative;
+            cursor: pointer;
+            z-index: 0;
         & i{
             color: grey;
             padding-right: 20px;
         }
+        &::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #F5EDFF;
+            box-shadow: $box-shadow;
+            opacity: 0;
+            border-radius: 30px;
+            z-index: -1;
+            transition: opacity 250ms;
+        }
         &:hover{
-            background-color: lighten($color: #af5fbb1d, $amount: 0);
-            box-shadow: $box-shadow_bold;
+            &::after{
+                opacity: 1;
+            }
             & i{
                 color: $color-primary;
             }
@@ -196,8 +213,6 @@
             left: 0;
             opacity: 0;
             background: linear-gradient(to bottom, $color-primary, $color-secondary); 
-            background: -webkit-linear-gradient(to bottom, $color-primary, $color-secondary);
-            background: -moz-linear-gradient(to bottom, $color-primary, $color-secondary); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -281,12 +296,17 @@
         & .titre{
             width: 85%;
             @include row;
+            flex-wrap: nowrap;
             justify-content: space-between;
             font-family: 'Shrikhand', cursive;
             padding: 20px;
+            @media (min-width:310px) and (max-width:374px){
+            font-size:$size;
+            }
         }
         & .cat{
             width: 90%;
+            padding-bottom: 20px;
             margin: auto;
             & h3{
                 font-weight: 200;
@@ -310,10 +330,10 @@
                         width: 83%;
                     @media (min-width:310px) and (max-width:374px){
                         width: 78%;
-                    }
+                        }
                     }  
                     &:hover .content .check{ 
-                        transform: scaleX(1);
+                        transform: translateX(1%);
                         opacity: 1;
                     }   
                     &:hover .content .fa-check-circle{ 
@@ -324,6 +344,7 @@
                         @include row;
                         flex-wrap: nowrap;
                         width: 100%;
+                        overflow: hidden;
                         justify-content: space-between;
                         transition: width 800ms;
                         & p{
@@ -342,7 +363,7 @@
                             justify-content: center;
                             align-items: center;
                             opacity: 0;
-                            transform: scaleX(0);
+                            transform: translateX(0%);
                             transition: transform 800ms;
                             transform-origin: right 50%;
                             position: absolute;
@@ -378,7 +399,7 @@
 
 
 /*autres formats*/
-@media (min-width:800px)  and (max-width:1500px)
+@media (min-width:800px)  and (max-width:1900px)
 {
     .restau{
         @include row;
@@ -402,7 +423,13 @@
         text-align: center;
     }
     .choix{
-        width: 250px;
+        width: 45%;
+    }
+    .carte{
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
     .horizontal{
         @include row;

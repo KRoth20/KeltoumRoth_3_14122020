@@ -1,10 +1,8 @@
 @mixin header{
     width: 100%;
-        text-align: center;
+    text-align: center;
         & img{
-            margin-top: 5%;
-            margin-bottom: 2%;
-            width: 50%;
+            width: 7em;
         }
 }
 @mixin row {
