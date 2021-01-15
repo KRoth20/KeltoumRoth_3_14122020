@@ -30,7 +30,7 @@
             left: 20px;
             color: black;
         }
-        @media (min-width:310px) and (max-width:374px){
+        @media (min-width:300px) and (max-width:374px){
             & img{
                 width: 6em;
             }
@@ -290,12 +290,13 @@
         border-radius: 30px;
         background-color: $color-bg;
         & .titre{
-            width: 85%;
+            width: 90%;
+            margin: auto;
             @include row;
             flex-wrap: nowrap;
             justify-content: space-between;
             font-family: 'Shrikhand', cursive;
-            padding: 20px;
+            padding: 20px 0 20px 0;
             @media (min-width:310px) and (max-width:374px){
             font-size:$size;
             }
@@ -304,6 +305,9 @@
             width: 90%;
             padding-bottom: 20px;
             margin: auto;
+            @media (min-width:1100px){
+                margin: 0;
+                }    
             & h3{
                 font-weight: 200;
                 color: grey;
@@ -320,18 +324,47 @@
                 overflow: hidden;
                 & .name{
                     width: 100%;
-                    & h4{
+                    & .bold{
+                        font-weight: bold;
+                        font-size: 1em;
+                        line-height: 1;
+                    }
+                    & p{
+                        line-height: 2em;
                         @include points;
                     }
+                    &:hover .bold{
+                        width: 90%;
+                        @media (max-width:309px){
+                            width: 80%;
+                        }
+                        @media (min-width:310px) and (max-width:374px){
+                            width: 90%;
+                        }
+                        @media (min-width:1100px){
+                            width: 80%;
+                        }
+                   
+                    }
+
                     &:hover .content{
                         width: 83%;
-                    @media (min-width:310px) and (max-width:374px){
-                        width: 78%;
+                        @media (max-width:309px){
+                            width: 75%;
                         }
-                    }  
+                        @media (min-width:310px) and (max-width:374px){
+                            width: 78%;
+                        }
+                        @media (min-width:700px) and (max-width:1099px){
+                            width: 90%;
+                        }
+                        @media (min-width:1100px){
+                            width: 80%;
+                        }  
+                    }
                     &:hover .content .check{ 
-                        animation: check 800ms;
-                        animation-fill-mode: forwards;
+                        animation:800ms forwards check;
+                        
                     }   
                     &:hover .content .fa-check-circle{ 
                         transform: rotate(360deg);
@@ -344,12 +377,8 @@
                         overflow: hidden;
                         justify-content: space-between;
                         transition: width 800ms;
-                        & p{
-                            line-height: 2em;
-                            @include points;
-                        }
                         & span{
-                            font-weight: bold;
+                            font-weight: bold;    
                         }
                         & .check{
                             background-color: $color-tertiary;
@@ -400,8 +429,8 @@
         flex-wrap: nowrap;
         height: auto;
     }
+  
     .concept h2{
-        width: 100%;
         text-align: center;
         margin: 20px; 
     }
@@ -419,27 +448,33 @@
     .choix{
         width: 45%;
     }
-    .carte{
-        height: 1000px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-    .horizontal{
-        @include row;
-        flex-wrap: nowrap;
-        margin-left: 20px;
-        & .cat{
-            & h3{
-                text-align: center;
-            }
-            & .btn_miam2{
-                width: 80%;
-            }
-        }
+
+    .titre{
+        width: 90%;
+        margin: auto;
     }
     footer{
         @include row;
         flex-wrap: nowrap;
     }
+}
+
+@media (min-width:1100px)  and (max-width:1900px){
+
+.horizontal{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: auto;
+    & .cat{
+        width: 33%;
+        & h3{
+            text-align: center;
+        }
+        & .btn_miam2{
+            width: 80%;
+        }
+    }
+}
 }

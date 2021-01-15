@@ -118,7 +118,7 @@ header img {
   left: 20px;
   color: black;
 }
-@media (min-width: 310px) and (max-width: 374px) {
+@media (min-width: 300px) and (max-width: 374px) {
   .header_bis img {
     width: 6em;
   }
@@ -478,7 +478,8 @@ footer .legal {
   /* section_commande*/
 }
 .carte .titre {
-  width: 85%;
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -487,7 +488,7 @@ footer .legal {
   flex-wrap: nowrap;
   justify-content: space-between;
   font-family: "Shrikhand", cursive;
-  padding: 20px;
+  padding: 20px 0 20px 0;
 }
 @media (min-width: 310px) and (max-width: 374px) {
   .carte .titre {
@@ -498,6 +499,11 @@ footer .legal {
   width: 90%;
   padding-bottom: 20px;
   margin: auto;
+}
+@media (min-width: 1100px) {
+  .carte .cat {
+    margin: 0;
+  }
 }
 .carte .cat h3 {
   font-weight: 200;
@@ -535,22 +541,60 @@ footer .legal {
 .carte .cat .btn_miam2 .name {
   width: 100%;
 }
-.carte .cat .btn_miam2 .name h4 {
+.carte .cat .btn_miam2 .name .bold {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1;
+}
+.carte .cat .btn_miam2 .name p {
+  line-height: 2em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.carte .cat .btn_miam2 .name:hover .bold {
+  width: 90%;
+}
+@media (max-width: 309px) {
+  .carte .cat .btn_miam2 .name:hover .bold {
+    width: 80%;
+  }
+}
+@media (min-width: 310px) and (max-width: 374px) {
+  .carte .cat .btn_miam2 .name:hover .bold {
+    width: 90%;
+  }
+}
+@media (min-width: 1100px) {
+  .carte .cat .btn_miam2 .name:hover .bold {
+    width: 80%;
+  }
+}
 .carte .cat .btn_miam2 .name:hover .content {
   width: 83%;
+}
+@media (max-width: 309px) {
+  .carte .cat .btn_miam2 .name:hover .content {
+    width: 75%;
+  }
 }
 @media (min-width: 310px) and (max-width: 374px) {
   .carte .cat .btn_miam2 .name:hover .content {
     width: 78%;
   }
 }
+@media (min-width: 700px) and (max-width: 1099px) {
+  .carte .cat .btn_miam2 .name:hover .content {
+    width: 90%;
+  }
+}
+@media (min-width: 1100px) {
+  .carte .cat .btn_miam2 .name:hover .content {
+    width: 80%;
+  }
+}
 .carte .cat .btn_miam2 .name:hover .content .check {
-  animation: check 800ms;
-  animation-fill-mode: forwards;
+  animation: 800ms forwards check;
 }
 .carte .cat .btn_miam2 .name:hover .content .fa-check-circle {
   transform: rotate(360deg);
@@ -567,12 +611,6 @@ footer .legal {
   overflow: hidden;
   justify-content: space-between;
   transition: width 800ms;
-}
-.carte .cat .btn_miam2 .name .content p {
-  line-height: 2em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .carte .cat .btn_miam2 .name .content span {
   font-weight: bold;
@@ -623,7 +661,6 @@ footer .legal {
   }
 
   .concept h2 {
-    width: 100%;
     text-align: center;
     margin: 20px;
   }
@@ -649,27 +686,9 @@ footer .legal {
     width: 45%;
   }
 
-  .carte {
-    height: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  .horizontal {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-left: 20px;
-  }
-  .horizontal .cat h3 {
-    text-align: center;
-  }
-  .horizontal .cat .btn_miam2 {
-    width: 80%;
+  .titre {
+    width: 90%;
+    margin: auto;
   }
 
   footer {
@@ -679,6 +698,24 @@ footer .legal {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1900px) {
+  .horizontal {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: auto;
+  }
+  .horizontal .cat {
+    width: 33%;
+  }
+  .horizontal .cat h3 {
+    text-align: center;
+  }
+  .horizontal .cat .btn_miam2 {
+    width: 80%;
   }
 }
 
