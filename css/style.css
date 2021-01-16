@@ -562,7 +562,7 @@ footer .legal {
 }
 @media (min-width: 310px) and (max-width: 374px) {
   .carte .cat .btn_miam2 .name:hover .bold {
-    width: 90%;
+    width: 85%;
   }
 }
 @media (min-width: 1100px) {
@@ -649,7 +649,7 @@ footer .legal {
 }
 
 /*autres formats*/
-@media (min-width: 800px) and (max-width: 1900px) {
+@media (min-width: 800px) {
   .restau {
     display: flex;
     flex-direction: row;
@@ -700,7 +700,7 @@ footer .legal {
     flex-wrap: nowrap;
   }
 }
-@media (min-width: 1100px) and (max-width: 1900px) {
+@media (min-width: 1100px) {
   .horizontal {
     display: flex;
     align-items: baseline;
